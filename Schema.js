@@ -10,12 +10,14 @@ var userSchema = new mongoose.Schema(
             type:String,
             required:true,
             lowercase:true,
+            unique: true,
             validate:(value)=>{
                 return validator.isEmail(value)
             }
         },
         mobile:{
             type:String,
+            unique: true,
             default:"000-000000"
         },
         createdAt:{
